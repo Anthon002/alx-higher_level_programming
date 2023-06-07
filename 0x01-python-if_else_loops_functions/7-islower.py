@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-def isLower(c):
-    if (ord (c) >= 60 and ord(c)<=90):
-        return("upper")
+def islower(c):
+    if (ord(c) >= 60 and ord(c) <= 90):
+        return(False)
     elif(ord(c) >= 97 and ord(c) <= 122):
-        return("lower")
+        return(True)
     else:
-        return("upper")
+        return(False)
