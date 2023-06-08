@@ -4,5 +4,5 @@ if __name__ == "__main__":
     def add_num():
         a = 1
         b = 2
-        print("{} + {} = {}".format(a, b, add(a,b)))
-    add_num();
+        print("{} + {} = {}".format(a, b, add(a, b)))
+    add_num()
