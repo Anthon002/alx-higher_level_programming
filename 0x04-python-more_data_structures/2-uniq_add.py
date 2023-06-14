@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-def unique_sum(input_list=[]):
+def uniq_add(my_list=[]):
     unit = set()
     resum = 0
-    for num in input_list:
+    for num in my_list:
         if num not in unit:
             resum += num
             unit.add(num)
