@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-def multiply_list_comprehension(my_list=[], number=0):
-    mult_List = [i * number for i in my_list]
-    return (mult_List)
+def multiply_list_map(my_list=[], number=0):
+    final = list(map((number * lambda j: j), my_list))
+    return(final)
