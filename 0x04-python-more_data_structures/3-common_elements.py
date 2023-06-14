@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-def find_common_elements(set_a, set_b):
-    common_set = {elem for elem in set_a if elem in set_b}
-    return common_set
+def common_elements(set_1, set_2):
+    common_set = {elem for elem in set_1 if elem in set_2}
+    return (common_set)
