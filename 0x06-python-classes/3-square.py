@@ -1,41 +1,52 @@
 #!/usr/bin/python3
-"""Define a class Square."""
+"""
+Welcome to the world of squares! This module defines a Square class that represents
+the essence of square-shaped awesomeness.
+"""
 
 
 class Square:
-    """Represent a square."""
+    """
+    Behold, the magnificent Square!
+
+    Attributes:
+        __size (int): The size of the Square, defining its magical powers.
+    """
 
     def __init__(self, size=0):
-        """Initialize a new Square.
+        """
+        Summon a new Square into existence!
 
         Args:
-            size (int): The size of the new square.
+            size (int): The size of the new Square.
         """
         self.__size = self.__validate_size(size)
 
     def __validate_size(self, size):
-        """Validate the size value.
+        """
+        Validate the size value and unleash the powers of the Square.
 
         Args:
-            size (int): The size of the square.
+            size (int): The size of the Square.
 
         Returns:
-            int: The validated size value.
+            int: The validated size value, now ready for epic adventures.
 
         Raises:
-            TypeError: If the size is not an integer.
-            ValueError: If the size is less than 0.
+            TypeError: If the size is not an integer, for that's the Square's code.
+            ValueError: If the size is less than 0, for positivity fuels the Square's magic.
         """
         if not isinstance(size, int):
-            raise TypeError("size must be an integer")
+            raise TypeError("size must be an integer, for Square's sake!")
         elif size < 0:
-            raise ValueError("size must be >= 0")
+            raise ValueError("size must be >= 0, or else the Square's power shall wane!")
         return size
 
     def area(self):
-        """Calculate the area of the square.
+        """
+        Unleash the Square's mystical area, revealing its hidden powers.
 
         Returns:
-            int: The area of the square.
+            int: The area of the Square, the embodiment of its awe-inspiring might.
         """
         return self.__size ** 2
