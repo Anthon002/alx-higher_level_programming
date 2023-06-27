@@ -1,53 +1,46 @@
 #!/usr/bin/python3
 
-"""
-Welcome to the world of squares! 🎉 This module defines a Square class that represents
-the incredible power of geometrical perfection.
-"""
+"""Unleash the power of squares with the Square class."""
 
 
 class Square:
-    """
-    Behold, the mighty Square! 🟦
-
-    Attributes:
-        __size (int): The size of the Square, shaping its awe-inspiring might.
-    """
+    """Witness the might of a perfect square."""
 
     def __init__(self, size=0):
-        """
-        Summon a new Square into existence! 🪄✨
+        """Summon a new square into existence.
 
         Args:
-            size (int): The size of the new Square.
+            size (int): The size of the new square.
         """
-        self.__size = self.__validate_size(size)
+        self._size = None
+        self.size = size
 
-    def __validate_size(self, size):
-        """
-        Validate the size value and unlock the Square's hidden potential. 🔐
+    @property
+    def size(self):
+        """Unveil the current size of the square."""
+        return self._size
+
+    @size.setter
+    def size(self, value):
+        """Harness the power to resize the square.
 
         Args:
-            size (int): The size of the Square.
-
-        Returns:
-            int: The validated size value, now ready for monumental achievements.
+            value (int): The size of the square.
 
         Raises:
-            TypeError: If the size is not an integer, for squares are precise creatures.
-            ValueError: If the size is less than 0, for squares thrive on positivity.
+            TypeError: If the provided size is not an integer.
+            ValueError: If the provided size is less than 0.
         """
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer, for squares seek perfection!")
-        elif size < 0:
-            raise ValueError("size must be >= 0, or else the Square's magic shall fade!")
-        return size
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
+        self._size = value
 
     def area(self):
-        """
-        Unleash the Square's majestic area, revealing its true magnificence. 🌟
+        """Unleash the fury of the square's area.
 
         Returns:
-            int: The area of the Square, the embodiment of its timeless grandeur.
+            int: The almighty area of the square.
         """
-        return self.__size ** 2
+        return self._size ** 2
