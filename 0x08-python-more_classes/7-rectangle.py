@@ -6,19 +6,19 @@ class Rectangle:
     """Represent a rectangle.
 
     Attributes:
-        number_of_instances (int): The number of Rectangle instances.
-        print_symbol (any): The symbol used for string representation.
+        number_of_instances (int): This is the number of instances of the Rectangle.
+        print_symbol (any): The used symbol for the representation of the string.
     """
 
     number_of_instances = 0
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle instance.
+        """constructor for a new Rectangle.
 
         Args:
-            width (int): The width of the rectangle.
-            height (int): The height of the rectangle.
+            width (int): This is the width of  rectangle.
+            height (int): This is the height of rectangle.
         """
         type(self).number_of_instances += 1
         self.width = width
@@ -26,12 +26,12 @@ class Rectangle:
 
     @property
     def width(self):
-        """Get or set the width of the rectangle."""
+        """Getter to the width of  rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Set the width of the rectangle.
+        """Setter to width of rectangle.
 
         Args:
             value (int): The width value to be set.
@@ -48,12 +48,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get or set the height of the rectangle."""
+        """Getter to height of rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Set the height of the rectangle.
+        """Setter of the height rectangle.
 
         Args:
             value (int): The height value to be set.
@@ -97,12 +97,12 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
 
-        rect = []
+        therectangel = []
         for _ in range(self.__height):
-            rect.append(str(self.print_symbol) * self.__width)
+            therectangel.append(str(self.print_symbol) * self.__width)
             if _ != self.__height - 1:
-                rect.append("\n")
-        return "".join(rect)
+                therectangel.append("\n")
+        return "".join(therectangel)
 
     def __repr__(self):
         """Return a string representation of the rectangle object.
@@ -110,8 +110,8 @@ class Rectangle:
         Returns:
             str: The string representation.
         """
-        rect = f"Rectangle({self.__width}, {self.__height})"
-        return rect
+        therectangel = f"Rectangle({self.__width}, {self.__height})"
+        return therectangel
 
     def __del__(self):
         """Print a farewell message upon deletion of the rectangle."""
