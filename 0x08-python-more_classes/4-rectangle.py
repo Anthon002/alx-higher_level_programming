@@ -89,13 +89,13 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         
-        rect = []
+        therectangle = []
         for _ in range(self.__height):
-            rect.append("#" * self.__width)
+            therectangle.append("#" * self.__width)
             if _ != self.__height - 1:
-                rect.append("\n")
+                therectangle.append("\n")
         
-        return "".join(rect)
+        return "".join(therectangle)
 
     def __repr__(self):
         """Return a string representation of the rectangle object.
@@ -103,5 +103,5 @@ class Rectangle:
         Returns:
             str: The string representation.
         """
-        rect = f"Rectangle({self.__width}, {self.__height})"
-        return rect
+        therectangle = f"Rectangle({self.__width}, {self.__height})"
+        return therectangle
