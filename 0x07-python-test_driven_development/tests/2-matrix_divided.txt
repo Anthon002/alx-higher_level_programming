@@ -1,0 +1,62 @@
+Test cases for matrix_divided function
+=======================================
+
+Import the function from the module:
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+First test case (element of matrix not an in or float):
+	>>> matrix =[
+	...	["1",2,3],
+	...	["4",5,6],
+	...	["7",8,9],
+	... ]
+	>>> print(matrix_divided(matrix, 3))
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Second test case (matrix or irregular size):
+	>>> matrix = [
+	...	[1,2,3],
+	...	[4,5,6,7],
+	...	[8,9],
+	...	[10]
+	... ]
+	>>> print(matrix_divided(matrix, 3))
+	Traceback (most recent call last):
+		...
+	TypeError: Each row of the matrix must have the same size
+
+Third test case (div must be a number):
+	>>> matrix = [
+	...	[1,2,3],
+	...	[4,5,6]
+	... ]
+	>>> print(matrix_divided(matrix, "3"))
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+
+Fourht test case (div can't be zero):
+	>>> matrix = [
+        ...     [1,2,3],
+        ...     [4,5,6]
+        ... ]
+	>>> print(matrix_divided(matrix, 0))
+	Traceback (most recent call last):
+	ZeroDivisionError: division by zero
+
+Fifth test case (valid values):
+	>>> matrix = [
+        ...     [1,2,3],
+        ...     [4,5,6]
+        ... ]
+	>>> print(matrix_divided(matrix, 3))
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Sixth test case (empty list):
+	>>> matrix = []
+    	>>> print(matrix_divided(matrix, 3))
+    	Traceback (most recent call last):
+		...
+    	TypeError: matrix must be a matrix (list of lists) of integers/floats

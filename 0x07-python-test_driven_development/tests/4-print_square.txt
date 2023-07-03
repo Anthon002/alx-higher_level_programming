@@ -1,0 +1,31 @@
+
+This Module contains the test cases for 4-print_square.py
+=========================================================
+Test Case 1 (Valid input):
+    >>> print_square = __import__('4-print_square').print_square
+    >>> print_square(1)
+    #
+
+Test Case 2 (0 as the input):
+    >>> print_square(0)
+
+
+Test Case 3 (If the size is not an integer):
+    >>> print_square("5")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Test Case 4 (If the size is a float):
+    >>> print_square(4.67)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Test Case 5 (If the size is negative)
+    >>> print_square(-7)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+Test Case 6 (If there is no size)
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'

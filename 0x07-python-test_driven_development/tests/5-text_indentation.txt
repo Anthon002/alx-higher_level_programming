@@ -1,0 +1,42 @@
+This file contains the test cases for 5-text_indentation.py
+===========================================================
+
+Test Case 1 (Just on word):
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("How?")
+    How?
+    <BLANKLINE>
+
+Test Case 2 (Space before a sentence ):
+    >>> text_indentation("   Hello world.")
+    Hello world.
+    <BLANKLINE>
+
+Test Case 3 (Space after a sentence):
+    >>> text_indentation("Hello.   ")
+    Hello.
+    <BLANKLINE>
+
+Test Case 4 (Space before btw and after)
+    >>> text_indentation("    Hello all.    How are you.   ")
+    Hello all.
+    <BLANKLINE>
+    How are you.
+    <BLANKLINE>
+
+Test Case 5()::
+    >>> text_indentation("To be, or not to be")
+    To be, or not to be
+
+Test Case 6(valid input):
+    >>> text_indentation("To be! or not to be:\nThat.")
+    To be! or not to be:
+    <BLANKLINE>
+    <BLANKLINE>
+    That.
+    <BLANKLINE>
+
+Test Case 7 (text is not a string)
+    >>> text_indentation(437)
+    Traceback (most recent call last):
+    TypeError: text must be a string
