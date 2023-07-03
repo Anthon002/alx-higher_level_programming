@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """
-
     This module is for the division of matrices
-
 """
 def matrix_divided(matrix, div):
     """
