@@ -3,22 +3,22 @@
 
 
 class Rectangle:
-    """Represent a rectangle.
+    """A rectangle is represented by this class.
 
     Attributes:
-        number_of_instances (int): This is the number of instances of the Rectangle.
-        print_symbol (any): The used symbol for the representation of the string.
+        number_of_instances (int): The number of instances of the Rectangle.
+        print_symbol (any): The symbol used for the string representation.
     """
 
     number_of_instances = 0
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """constructor for a new Rectangle.
+        """A new Rectangle instance is initialized.
 
         Args:
-            width (int): This is the width of  rectangle.
-            height (int): This is the height of rectangle.
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
         """
         type(self).number_of_instances += 1
         self.width = width
@@ -26,12 +26,12 @@ class Rectangle:
 
     @property
     def width(self):
-        """Getter to the width of  rectangle."""
+        """Getter for the width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Setter to width of rectangle.
+        """Setter for the width of the rectangle.
 
         Args:
             value (int): The width value to be set.
@@ -40,7 +40,7 @@ class Rectangle:
             TypeError: If the provided width is not an integer.
             ValueError: If the provided width is negative.
         """
-        if not isinstance(value, int):
+        if not type(value) == int:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -48,12 +48,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """Getter to height of rectangle."""
+        """Getter for the height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Setter of the height rectangle.
+        """Setter for the height of the rectangle.
 
         Args:
             value (int): The height value to be set.
@@ -62,7 +62,7 @@ class Rectangle:
             TypeError: If the provided height is not an integer.
             ValueError: If the provided height is negative.
         """
-        if not isinstance(value, int):
+        if not type(value) == int:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
@@ -84,8 +84,9 @@ class Rectangle:
             int: The calculated perimeter.
         """
         perimeter = 0
-        if self.__width != 0 and self.__height != 0:
+        while self.__width != 0 and self.__height != 0:
             perimeter = (self.__width * 2) + (self.__height * 2)
+            return perimeter
         return perimeter
 
     def __str__(self):
@@ -98,10 +99,13 @@ class Rectangle:
             return ""
 
         therectangel = []
-        for _ in range(self.__height):
+        i = 0
+        while i < self.__height:
             therectangel.append(str(self.print_symbol) * self.__width)
-            if _ != self.__height - 1:
+            if i != self.__height - 1:
                 therectangel.append("\n")
+            i += 1
+
         return "".join(therectangel)
 
     def __repr__(self):
