@@ -15,8 +15,8 @@ class Rectangle:
         """Initialize a new Rectangle instance.
 
         Args:
-            width (int): The width of the rectangle.
-            height (int): The height of the rectangle.
+            width (int): This is the width of the rectangle.
+            height (int): This is the height of the rectangle.
         """
         type(self).number_of_instances += 1
         self.width = width
@@ -24,12 +24,12 @@ class Rectangle:
 
     @property
     def width(self):
-        """Get or set the width of the rectangle."""
+        """Getter for  width of  rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Set the width of the rectangle.
+        """Setter for width of  rectangle.
 
         Args:
             value (int): The width value to be set.
@@ -46,12 +46,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get or set the height of the rectangle."""
+        """Getter for  the height of  rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Set the height of the rectangle.
+        """Setter for height of rectangle.
 
         Args:
             value (int): The height value to be set.
@@ -95,12 +95,12 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
 
-        rect = []
+        therectangel = []
         for _ in range(self.__height):
-            rect.append("#" * self.__width)
+            therectangel.append("#" * self.__width)
             if _ != self.__height - 1:
-                rect.append("\n")
-        return "".join(rect)
+                therectangel.append("\n")
+        return "".join(therectangel)
 
     def __repr__(self):
         """Return a string representation of the rectangle object.
@@ -108,8 +108,8 @@ class Rectangle:
         Returns:
             str: The string representation.
         """
-        rect = f"Rectangle({self.__width}, {self.__height})"
-        return rect
+        therectangel = f"Rectangle({self.__width}, {self.__height})"
+        return therectangel
 
     def __del__(self):
         """Print a farewell message upon deletion of the rectangle."""
