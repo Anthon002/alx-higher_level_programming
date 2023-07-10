@@ -1,0 +1,50 @@
+Test cases for the 7-base_geometry module
+===========================================
+
+Test case 1(Importing the class ):
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+Test case 2(printing the area)
+    >>> bg = BaseGeometry()
+    >>> bg.area()
+    Traceback (most recent call last):
+    	      ...
+    Exception: area() is not implemented
+
+
+Test case 3(using non-integer arguments)
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("102", "15")
+    Traceback (most recent call last):
+    	      ...
+    TypeError: 102 must be an integer
+
+
+Test case 4(using boolean values)
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("102", False)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: 102 must be an integer
+
+
+Test case 5 (using negative values)
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("454", -50)
+    Traceback (most recent call last):
+    	      ...
+    ValueError: 454 must be greater than 0
+
+
+Test case 6 ( Using a zero value)
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("name", 0)
+    Traceback (most recent call last):
+    	      ...
+    ValueError: name must be greater than 0
+
+
+Test case 7 (using positive values)
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("name", 5)
