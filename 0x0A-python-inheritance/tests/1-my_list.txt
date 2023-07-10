@@ -1,0 +1,72 @@
+Test cases for 1-my_list.py module
+======================================
+
+Testcase 1(importing):
+>>> MyList = __import__('1-my_list').MyList
+>>>
+=======================================
+
+Testcase 2(Valid inputs):
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(4)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 2, 3, 4, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 2, 3, 4, 5]
+>>>
+
+Testcase 3(object that is not defined):
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list2.print_sorted()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'my_list2' is not defined
+>>>
+
+
+Testcase 4(passing a list instead of appending a number):
+
+>>> a = [1, 2, 3]
+>>> my_list = MyList(a)
+>>> my_list.print_sorted()
+[1, 2, 3]
+>>>
+
+Testcase 5(using an empty list):
+
+>>> a = []
+>>> my_list = MyList(a)
+>>> my_list.print_sorted()
+[]
+>>>
+
+
+Testcase 6(using just 1 number)
+
+>>> my_list = MyList()
+>>> my_list.append(4)
+>>> my_list.print_sorted()
+[4]
+>>> print(my_list)
+[4]
+>>>
+
+
+Testcase 7(using the same number):
+
+>>> my_list2 = MyList()
+>>> my_list2.append(10)
+>>> my_list2.append(10)
+>>> my_list2.append(10)
+>>> my_list2.append(10)
+>>> my_list2.print_sorted()
+[10, 10, 10, 10]
+>>>
