@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module loads and save add_item.json."""
+"""Add all arguments to a Python list and save them to a file."""
 import sys
 
 if __name__ == "__main__":
@@ -8,8 +8,8 @@ if __name__ == "__main__":
         __import__('6-load_from_json_file').load_from_json_file
 
     try:
-        the_elements = load_from_json_file("add_item.json")
+        items = load_from_json_file("add_item.json")
     except FileNotFoundError:
-        the_elements = []
+        items = []
     items.extend(sys.argv[1:])
-    save_to_json_file(the_elements, "add_item.json")
+    save_to_json_file(items, "add_item.json")
