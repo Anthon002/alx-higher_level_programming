@@ -29,54 +29,54 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-def update(self, *args, **kwargs):
-    """ method to update the Square.
-
-    Args:
-        *args (ints): New attribute values.
-            - First arg represents id attribute
-            - Second arg represents size attribute
-            - Third arg represents x attribute
-            - Fourth arg represents y attribute
-        **kwargs (dict): New key/value pairs of attributes.
-    """
-    if args and len(args) != 0:
-        a = 0
-        num_args = len(args)
-        while a < num_args:
-            arg = args[a]
-            if a == 0:
-                if arg is None:
-                    self.__init__(self.size, self.x, self.y)
-                else:
-                    self.id = arg
-            elif a == 1:
-                self.size = arg
-            elif a == 2:
-                self.x = arg
-            elif a == 3:
-                self.y = arg
-            a += 1
-
-    elif kwargs and len(kwargs) != 0:
-        keys = list(kwargs.keys())
-        num_kwargs = len(keys)
-        b = 0
-        while b < num_kwargs:
-            k = keys[b]
-            v = kwargs[k]
-            if k == "id":
-                if v is None:
-                    self.__init__(self.size, self.x, self.y)
-                else:
-                    self.id = v
-            elif k == "size":
-                self.size = v
-            elif k == "x":
-                self.x = v
-            elif k == "y":
-                self.y = v
-            b += 1
+    def update(self, *args, **kwargs):
+        """ method to update the Square.
+    
+        Args:
+            *args (ints): New attribute values.
+                - First arg represents id attribute
+                - Second arg represents size attribute
+                - Third arg represents x attribute
+                - Fourth arg represents y attribute
+            **kwargs (dict): New key/value pairs of attributes.
+        """
+        if args and len(args) != 0:
+            a = 0
+            num_args = len(args)
+            while a < num_args:
+                arg = args[a]
+                if a == 0:
+                    if arg is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif a == 1:
+                    self.size = arg
+                elif a == 2:
+                    self.x = arg
+                elif a == 3:
+                    self.y = arg
+                a += 1
+    
+        elif kwargs and len(kwargs) != 0:
+            keys = list(kwargs.keys())
+            num_kwargs = len(keys)
+            b = 0
+            while b < num_kwargs:
+                k = keys[b]
+                v = kwargs[k]
+                if k == "id":
+                    if v is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = v
+                elif k == "size":
+                    self.size = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
+                b += 1
 
     def to_dictionary(self):
         """Return the dictionary representation of the Square."""
