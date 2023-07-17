@@ -14,35 +14,35 @@ class Base:
             self.id = Base.__nb_objects
 
     @staticmethod
-    def to_json_string(list_of_dicts):
+    def to_json_string(list_dictionaries):
         """Converts a list of dictionaries to JSON string representation.
 
         Args:
-            list_of_dicts (list): A list of dictionaries.
+            list_dictionaries (list): A list of dictionaries.
 
         Returns:
             str: The JSON string representation of the list of dictionaries.
         """
-        if list_of_dicts is None or list_of_dicts == []:
+        if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        return json.dumps(list_of_dicts)
+        return json.dumps(list_dictionaries)
 
     @classmethod
-    def save_to_file(cls, object_list):
+    def save_to_file(cls, list_objs):
         """Saves a list of objects to a file in JSON format.
 
         Args:
-            object_list (list): A list of objects.
+            list_objs (list): A list of objects.
 
         Returns:
             None
         """
         filename = cls.__name__ + ".json"
         with open(filename, "w") as json_file:
-            if object_list is None:
+            if list_objs is None:
                 json_file.write("[]")
             else:
-                dict_list = [obj.to_dictionary() for obj in object_list]
+                dict_list = [obj.to_dictionary() for obj in list_objs]
                 json_string = Base.convert_to_json(dict_list)
                 json_file.write(json_string)
 
@@ -61,11 +61,11 @@ class Base:
         return json.loads(json_string)
 
     @classmethod
-    def create(cls, **attributes):
+    def create(cls, **dictionary):
         """Creates an object instance from a dictionary of attributes.
 
         Args:
-            **attributes (dict): Key/value pairs of attributes to initialize the object.
+            **dictionary (dict): Key/value pairs of attributes to initialize the object.
 
         Returns:
             object: An instance of the class with the specified attributes.
@@ -75,7 +75,7 @@ class Base:
                 new_obj = cls(1, 1)
             else:
                 new_obj = cls(1)
-            new_obj.update(**attributes)
+            new_obj.update(**dictionary)
             return new_obj
 
     @classmethod
@@ -100,18 +100,18 @@ class Base:
             return []
 
     @classmethod
-    def save_to_file_csv(cls, object_list):
+    def save_to_file_csv(cls, list_objs):
         """Writes a list of objects to a CSV file.
 
         Args:
-            object_list (list): A list of objects.
+            list_objs (list): A list of objects.
 
         Returns:
             None
         """
         filename = cls.__name__ + ".csv"
         with open(filename, "w", newline="") as csv_file:
-            if object_list is None or object_list == []:
+            if list_objs is None or list_objs == []:
                 csv_file.write("[]")
             else:
                 if cls.__name__ == "Rectangle":
@@ -119,7 +119,7 @@ class Base:
                 else:
                     fieldnames = ["id", "size", "x", "y"]
                 writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-                for obj in object_list:
+                for obj in list_objs:
                     writer.writerow(obj.to_dictionary())
 
     @classmethod
