@@ -149,6 +149,19 @@ class Rectangle(Base):
                     self.y = v
                 i += 1
 
+    def to_dictionary(self):
+        """ this function returns  the dictionary representation of the Rectangle class ."""
+        rect_as_dict = {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
+
+        return (rect_as_dict)
+
+
     def __str__(self):
         """returns the info about rectangle in this format"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,

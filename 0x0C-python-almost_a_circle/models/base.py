@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """ this module contains the Base class
 """
+import csv
+import json
 
 
 class Base:
@@ -29,22 +31,18 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Saves a list of objects to a file in JSON format.
+        """Write the JSON serialization of a list of objects to a file.
 
         Args:
-            list_objs (list): A list of objects.
-
-        Returns:
-            None
+            list_objs (list): A list of inherited Base instances.
         """
         filename = cls.__name__ + ".json"
-        with open(filename, "w") as json_file:
+        with open(filename, "w") as jsonfile:
             if list_objs is None:
-                json_file.write("[]")
+                jsonfile.write("[]")
             else:
-                dict_list = [obj.to_dictionary() for obj in list_objs]
-                json_string = Base.convert_to_json(dict_list)
-                json_file.write(json_string)
+                list_dicts = [o.to_dictionary() for o in list_objs]
+                jsonfile.write(Base.to_json_string(list_dicts))
 
     @staticmethod
     def from_json_string(json_string):
@@ -70,7 +68,7 @@ class Base:
         Returns:
             object: An instance of the class with the specified attributes.
         """
-        if attributes and attributes != {}:
+        if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
                 new_obj = cls(1, 1)
             else:
@@ -94,9 +92,9 @@ class Base:
         try:
             with open(filename, "r") as json_file:
                 json_string = json_file.read()
-                dict_list = Base.convert_from_json(json_string)
-                return [cls.create_object(**d) for d in dict_list]
-        except FileNotFoundError:
+                dict_list = Base.from_json_string(json_string)
+                return [cls.create(**s) for s in dict_list]
+        except IOError:
             return []
 
     @classmethod
