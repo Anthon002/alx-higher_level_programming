@@ -145,3 +145,38 @@ class Base:
         except IOError:
             return []
 
+    @staticmethod
+    def draw(list_shapes):
+        """the function uses the turle module to draw a circle and a square.
+    
+        Args:
+            list_shapes (list): objs to draw.
+        """
+        _draw = turtle.Turtle()
+        _draw.screen.bgcolor("#b7312c")
+        _draw.pensize(3)
+        _draw.shape("turtle")
+    
+        for shape in list_shapes:
+            if isinstance(shape, Rectangle):
+                _draw.color("#ffffff")
+            elif isinstance(shape, Square):
+                _draw.color("#b5e3d8")
+    
+            _draw.showturtle()
+            _draw.up()
+            _draw.goto(shape.x, shape.y)
+            _draw.down()
+    
+            sides_drawn = 0
+            while sides_drawn < 2:
+                _draw.forward(shape.width)
+                _draw.left(90)
+                _draw.forward(shape.height)
+                _draw.left(90)
+                sides_drawn += 1
+    
+            _draw.hideturtle()
+    
+        turtle.exitonclick()
+    
