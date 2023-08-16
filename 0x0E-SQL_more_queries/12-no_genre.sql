@@ -1,0 +1,7 @@
+-- Displays all TV shows in the hbtn_0d_tvshows database without an associated genre.
+SELECT sh.`title`, gen.`genre_id`
+  FROM `tv_shows` AS sh
+       LEFT JOIN `tv_show_genres` AS gen
+       ON sh.`id` = gen.`show_id`
+       WHERE gen.`genre_id` IS NULL
+ ORDER BY sh.`title`, gen.`genre_id`;
