@@ -1,12 +1,8 @@
 #!/usr/bin/node
+const SquareP = require('./5-square');
 
-class Square {
-  constructor(size) {
-    this.width = size;
-    this.height = size;
-  }
-
-  charPrint(c) {
+class Square extends SquareP {
+  charPrint (c) {
     if (c === undefined) {
       c = 'X';
     }
